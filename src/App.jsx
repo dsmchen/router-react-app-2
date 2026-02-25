@@ -27,12 +27,24 @@ const About = () => {
   );
 };
 
+const NotFound = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <h1>404: Page not found</h1>
+      <button onClick={() => navigate('/')}>Go to Home Page</button>
+    </div>
+  );
+};
+
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
